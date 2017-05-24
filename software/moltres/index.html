@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Software</title>
+  <title>Moltres</title>
     <meta name="viewport" content="width=device-width">
   <meta name="description" content="Website for the Advanced Reactors and Fuel Cycles group">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="http://arfc.github.io/research/software/">
+  <link rel="canonical" href="http://arfc.github.io/software/moltres/">
   <link rel="alternate" type="application/rss+xml" title="ARFC" href="http://arfc.github.io/feed.xml">
   <link rel="shortcut icon" href="http://arfc.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -65,9 +65,25 @@
     
     <li><a class="page-scroll nounderline" href="/research/presentations">Presentations</a></li>
     
-    <li><a class="page-scroll nounderline" href="/research/software">Software</a></li>
+    <li><a class="page-scroll nounderline" href="/software">Software</a></li>
     
-    <li><a class="page-scroll nounderline" href="/research/other">Other</a></li>
+    </ul>
+    
+    </li>
+    
+    
+    <li><a class="page-scroll nounderline" href="/software" class="page-link">Software</a>
+    <ul class="sub-menu">
+    
+    <li><a class="page-scroll nounderline" href="https://fuelcycle.org">cyclus</a></li>
+    
+    <li><a class="page-scroll nounderline" href="https://arfc.github.io/cyder">cyder</a></li>
+    
+    <li><a class="page-scroll nounderline" href="/software/moltres">moltres</a></li>
+    
+    <li><a class="page-scroll nounderline" href="https://pyne.io">pyne</a></li>
+    
+    <li><a class="page-scroll nounderline" href="https://pyrk.github.io">pyrk</a></li>
     
     </ul>
     
@@ -115,16 +131,6 @@
     
     </li>
     
-    
-    <li><a class="page-scroll nounderline" href="/codes/" class="page-link">Codes</a>
-    <ul class="sub-menu">
-    
-    <li><a class="page-scroll nounderline" href="/codes/moltres">moltres</a></li>
-    
-    </ul>
-    
-    </li>
-    
 
                 </ul>
             </div>
@@ -144,7 +150,7 @@
         
           <a class="page-link" href="/people/alumni">Alumni</a>
         
-          <a class="page-link" href="/codes/moltres/wiki/bcs/">Boundary Conditions</a>
+          <a class="page-link" href="/software/moltres/wiki/bcs/">Boundary Conditions</a>
         
           <a class="page-link" href="/manual/guides/bluewaters">Blue Waters</a>
         
@@ -166,7 +172,7 @@
         
           <a class="page-link" href="/">Advanced Reactors and Fuel Cycles</a>
         
-          <a class="page-link" href="/codes/moltres/wiki/kernels/">Kernels</a>
+          <a class="page-link" href="/software/moltres/wiki/kernels/">Kernels</a>
         
           <a class="page-link" href="/manual/">Laboratory Manual</a>
         
@@ -174,7 +180,7 @@
         
           <a class="page-link" href="/manual/mission">Mission</a>
         
-          <a class="page-link" href="/codes/moltres/">Moltres</a>
+          <a class="page-link" href="/software/moltres/">Moltres</a>
         
           <a class="page-link" href="/research/other/">Other Stuff</a>
         
@@ -194,7 +200,7 @@
         
           <a class="page-link" href="/manual/guides/katy/revreq">Requesting a Review of Something</a>
         
-          <a class="page-link" href="/research/software/">Software</a>
+          <a class="page-link" href="/software/">Software</a>
         
           
         
@@ -204,7 +210,7 @@
         
           <a class="page-link" href="/manual/guides/website">Website</a>
         
-          <a class="page-link" href="/codes/moltres/wiki/">Moltres Wiki</a>
+          <a class="page-link" href="/software/moltres/wiki/">Moltres Wiki</a>
         
           <a class="page-link" href="/manual/guides/zotero">Zotero</a>
         
@@ -213,93 +219,72 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <!-- CODE -->
-    <section id="code" class="">
+        <!-- Manual -->
+    <section id="title" class="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Software</h2>
-                    <h3 class="section-subheading text-muted">We use modeling and simulation to understand and improve the safety and sustainability of advanced nuclear reactor designs and fuel cycle strategies.</h3>
+                    <h2 class="section-heading">Moltres</h2>
+                    <h3 class="section-subheading text-muted">Open Source Modeling of Molten Salt Reactors</h3>
                 </div>
             </div>
         </div>
 
-        
         <div class="container">
-            <div class="row project">
-                <div class="col-md-4">
-                        <img src="/img/research/moltres.jpg" class="img-responsive" alt="moltres">
+            <div class="row">
+                <div class="col-md-3">
                 </div>
-                <div class="col-lg-8">
-                        <h4>moltres</h4>
-                        <p class="text-muted">A Moltres is a MOOSE-application code designed for simulation of molten salt reactors.</p>
-                        <p class="text-muted"><i>Role: Alexander Lindsay, creator.</i>. 2016-present.</p>
-                        <p><i class="fa fa-link"></i> <a class="page-scroll" href="#https://arfc.github.com/moltres">https://arfc.github.com/moltres</a></p>
-                        <p><i class="fa fa-code"></i> <a class="page-scroll" href="#https://arfc.github.com/moltres">https://github.com/arfc/moltres</a></p>
+                <div class="col-md-6">
+                        <p>Moltres is a MOOSE-application code design for simulation of molten salt
+reactors.</p>
+
+<h2 id="install">Install</h2>
+
+<p>Moltres relies on the MOOSE framework. To install MOOSE please follow the
+instructions at http://mooseframework.org/getting-started/. After installing
+MOOSE, you can install Moltres by running the following commands in a shell
+after changing into the directory holding your MOOSE directory (perhaps <code class="highlighter-rouge">~/projects</code>):</p>
+
+<p><code class="highlighter-rouge">bash
+git clone https://github.com/arfc/moltres
+cd moltres
+git submodule init
+git submodule update
+make -j8
+</code></p>
+
+<p>You may also compile a debug version of Moltres by running <code class="highlighter-rouge">METHOD=dbg make
+-j8</code>.</p>
+
+<h2 id="support">Support</h2>
+
+<p>For automated documentation of the code, see our doxygen pages:</p>
+
+<p><a href="http://arfc.github.io/moltres">Doxygen</a></p>
+
+<p>General user documentation can be found on our wiki:</p>
+
+<p><a href="./wiki/">wiki</a></p>
+
+<h3 id="contact">Contact</h3>
+
+<p>Contact Alex Lindsay at al007@illinois.edu for more information or
+even better, please post to our discussion list at
+moltres-users@googlegroups.com.</p>
+
+<h2 id="development">Development</h2>
+
+<p>If you ever want to contribute changes to the Moltres repository, make sure you
+run <code class="highlighter-rouge">./scripts/install-format-hook.sh</code> before making any commits. This will
+ensure that any commits you make adhere to the MOOSE/Moltres C++ style.</p>
+
+<p><img src="phoenix_CC0.jpg" alt="" /></p>
+
+                </div>
+                <div class="col-md-3">
                 </div>
             </div>
         </div>
-        
-        <div class="container">
-            <div class="row project">
-                <div class="col-md-4">
-                        <img src="/img/research/cyclus.gif" class="img-responsive" alt="cyclus">
-                </div>
-                <div class="col-lg-8">
-                        <h4>cyclus</h4>
-                        <p class="text-muted">A C++ nuclear fuel cycle simulation framework</p>
-                        <p class="text-muted"><i>Role: Huff, original creator and continued contributor.</i>. 2010-present.</p>
-                        <p><i class="fa fa-link"></i> <a class="page-scroll" href="#https://fuelcycle.org">https://fuelcycle.org</a></p>
-                        <p><i class="fa fa-code"></i> <a class="page-scroll" href="#https://fuelcycle.org">https://github.com/cyclus/cyclus</a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row project">
-                <div class="col-md-4">
-                        <img src="/img/research/cyder.png" class="img-responsive" alt="cyder">
-                </div>
-                <div class="col-lg-8">
-                        <h4>cyder</h4>
-                        <p class="text-muted">Cyder is an integrated used fuel disposition and generic repository model for fuel cycle analysis. (C++) This was Prof. Huffs ph.d. dissertation work.</p>
-                        <p class="text-muted"><i>Role: Huff, original creator and continued contributor.</i>. 2011-2013.</p>
-                        <p><i class="fa fa-link"></i> <a class="page-scroll" href="#https://katyhuff.github.io/cyder">https://katyhuff.github.io/cyder</a></p>
-                        <p><i class="fa fa-code"></i> <a class="page-scroll" href="#https://katyhuff.github.io/cyder">https://github.com/katyhuff/cyder</a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row project">
-                <div class="col-md-4">
-                        <img src="/img/research/pyne.png" class="img-responsive" alt="pyne">
-                </div>
-                <div class="col-lg-8">
-                        <h4>pyne</h4>
-                        <p class="text-muted">PyNE is a nuclear engineering toolkit. (C++ and python)</p>
-                        <p class="text-muted"><i>Role: Huff, advocate and occaisional contributor.</i>. 2011-present.</p>
-                        <p><i class="fa fa-link"></i> <a class="page-scroll" href="#https://pyne.io">https://pyne.io</a></p>
-                        <p><i class="fa fa-code"></i> <a class="page-scroll" href="#https://pyne.io">https://github.com/pyne</a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row project">
-                <div class="col-md-4">
-                        <img src="/img/research/pyrk.png" class="img-responsive" alt="pyrk">
-                </div>
-                <div class="col-lg-8">
-                        <h4>pyrk</h4>
-                        <p class="text-muted">A python package for neutron kinetics</p>
-                        <p class="text-muted"><i>Role: Huff, original creator and continued contributor.</i>. 2015-present.</p>
-                        <p><i class="fa fa-link"></i> <a class="page-scroll" href="#https://pyrk.github.io">https://pyrk.github.io</a></p>
-                        <p><i class="fa fa-code"></i> <a class="page-scroll" href="#https://pyrk.github.io">https://github.com/pyrk/pyrk</a></p>
-                </div>
-            </div>
-        </div>
-        
     </div>
     </section>
     

@@ -8,13 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Boundary Conditions</title>
+  <title>Moltres Wiki</title>
     <meta name="viewport" content="width=device-width">
   <meta name="description" content="Website for the Advanced Reactors and Fuel Cycles group">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="http://arfc.github.io/codes/moltres/wiki/bcs/">
+  <link rel="canonical" href="http://arfc.github.io/software/moltres/wiki/">
   <link rel="alternate" type="application/rss+xml" title="ARFC" href="http://arfc.github.io/feed.xml">
   <link rel="shortcut icon" href="http://arfc.github.io/favicon.ico" />
     <!-- Custom Fonts -->
@@ -65,9 +65,25 @@
     
     <li><a class="page-scroll nounderline" href="/research/presentations">Presentations</a></li>
     
-    <li><a class="page-scroll nounderline" href="/research/software">Software</a></li>
+    <li><a class="page-scroll nounderline" href="/software">Software</a></li>
     
-    <li><a class="page-scroll nounderline" href="/research/other">Other</a></li>
+    </ul>
+    
+    </li>
+    
+    
+    <li><a class="page-scroll nounderline" href="/software" class="page-link">Software</a>
+    <ul class="sub-menu">
+    
+    <li><a class="page-scroll nounderline" href="https://fuelcycle.org">cyclus</a></li>
+    
+    <li><a class="page-scroll nounderline" href="https://arfc.github.io/cyder">cyder</a></li>
+    
+    <li><a class="page-scroll nounderline" href="/software/moltres">moltres</a></li>
+    
+    <li><a class="page-scroll nounderline" href="https://pyne.io">pyne</a></li>
+    
+    <li><a class="page-scroll nounderline" href="https://pyrk.github.io">pyrk</a></li>
     
     </ul>
     
@@ -115,16 +131,6 @@
     
     </li>
     
-    
-    <li><a class="page-scroll nounderline" href="/codes/" class="page-link">Codes</a>
-    <ul class="sub-menu">
-    
-    <li><a class="page-scroll nounderline" href="/codes/moltres">moltres</a></li>
-    
-    </ul>
-    
-    </li>
-    
 
                 </ul>
             </div>
@@ -144,7 +150,7 @@
         
           <a class="page-link" href="/people/alumni">Alumni</a>
         
-          <a class="page-link" href="/codes/moltres/wiki/bcs/">Boundary Conditions</a>
+          <a class="page-link" href="/software/moltres/wiki/bcs/">Boundary Conditions</a>
         
           <a class="page-link" href="/manual/guides/bluewaters">Blue Waters</a>
         
@@ -166,7 +172,7 @@
         
           <a class="page-link" href="/">Advanced Reactors and Fuel Cycles</a>
         
-          <a class="page-link" href="/codes/moltres/wiki/kernels/">Kernels</a>
+          <a class="page-link" href="/software/moltres/wiki/kernels/">Kernels</a>
         
           <a class="page-link" href="/manual/">Laboratory Manual</a>
         
@@ -174,7 +180,7 @@
         
           <a class="page-link" href="/manual/mission">Mission</a>
         
-          <a class="page-link" href="/codes/moltres/">Moltres</a>
+          <a class="page-link" href="/software/moltres/">Moltres</a>
         
           <a class="page-link" href="/research/other/">Other Stuff</a>
         
@@ -194,7 +200,7 @@
         
           <a class="page-link" href="/manual/guides/katy/revreq">Requesting a Review of Something</a>
         
-          <a class="page-link" href="/research/software/">Software</a>
+          <a class="page-link" href="/software/">Software</a>
         
           
         
@@ -204,7 +210,7 @@
         
           <a class="page-link" href="/manual/guides/website">Website</a>
         
-          <a class="page-link" href="/codes/moltres/wiki/">Moltres Wiki</a>
+          <a class="page-link" href="/software/moltres/wiki/">Moltres Wiki</a>
         
           <a class="page-link" href="/manual/guides/zotero">Zotero</a>
         
@@ -218,8 +224,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Boundary Conditions</h2>
-                    <h3 class="section-subheading text-muted"></h3>
+                    <h2 class="section-heading">Moltres Wiki</h2>
+                    <h3 class="section-subheading text-muted">User guide pages</h3>
                 </div>
             </div>
         </div>
@@ -229,41 +235,14 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6">
-                        <p>This page shows the mathematical forms of the auxiliary equation pieces that
-each boundary condition class represents. Note that <script type="math/tex">u</script> is used in some places to denote a
-generic variable. Elsewhere typical literature symbols are used, e.g. <script type="math/tex">\phi</script>
-denotes the neutron flux, <script type="math/tex">T</script> denotes the temperature, and <script type="math/tex">C</script> denotes
-precursor concentrations.</p>
+                        <p>The following pages give the math behind the <code class="highlighter-rouge">Kernel</code> and <code class="highlighter-rouge">BC</code> classes that are
+used to construct the weak forms of the PDEs required for the finite element
+method:</p>
 
-<h2 id="moltres-bcs">Moltres BCs</h2>
-
-<p><strong>VacuumBC</strong></p>
-
-<script type="math/tex; mode=display">\vec{n} \cdot -D_g \nabla \phi_g = \frac{\phi_g}{2}</script>
-
-<h2 id="squirrel-bcs">Squirrel BCs</h2>
-
-<p><strong>OutflowBC</strong></p>
-
-<p>\begin{align}
-\vec{n} \cdot \vec{\Gamma} &amp;= \vec{n} \cdot \vec{a} u \ \ \mathsf{if} \ \ \vec{n} \cdot \vec{a} &gt; 0\\
-&amp;= 0 \ \ \mathsf{if} \ \ \vec{n} \cdot \vec{a} \le 0\\
-\end{align}</p>
-
-<p><strong>InflowBC</strong></p>
-
-<script type="math/tex; mode=display">\vec{n} \cdot \vec{\Gamma} = \vec{n} \cdot \vec{a} u_{in}</script>
-
-<p><strong>TemperatureOutflowBC</strong></p>
-
-<p>\begin{align}
-\vec{n} \cdot \vec{\Gamma} &amp;= \rho c_p \vec{n} \cdot \vec{a} T \ \ \mathsf{if} \ \ \vec{n} \cdot \vec{a} &gt; 0\\
-&amp;= 0 \ \ \mathsf{if} \ \ \vec{n} \cdot \vec{a} \le 0
-\end{align}</p>
-
-<p><strong>TemperatureInflowBC</strong></p>
-
-<script type="math/tex; mode=display">\vec{n} \cdot \vec{\Gamma} = \rho c_p \vec{n} \cdot \vec{a} T_{in}</script>
+<ul>
+  <li><a href="./kernels/">Kernels</a></li>
+  <li><a href="./bcs/">BCs</a></li>
+</ul>
 
                 </div>
                 <div class="col-md-3">
